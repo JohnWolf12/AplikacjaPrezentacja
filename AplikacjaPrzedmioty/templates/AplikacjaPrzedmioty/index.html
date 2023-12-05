@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AplikacjaPrzedmioty/style.css' %}">
+    <title>Przedmioty</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Opis</th>
+                <th>Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in przedmioty %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.nazwa }}</td>
+                <td>{{ p.opis }}</td>
+                <td>{{ p.cena }} zl</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
